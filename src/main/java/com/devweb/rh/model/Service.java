@@ -1,6 +1,8 @@
 package com.devweb.rh.model;
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.*;
 @Entity
@@ -10,7 +12,8 @@ public class Service {
     private int id;
     @Column(length = 25)
     private String libelle;
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "service")
+    @OneToMany(mappedBy = "service")
+    @JsonBackReference
     private List<Employe> employes;
 
 

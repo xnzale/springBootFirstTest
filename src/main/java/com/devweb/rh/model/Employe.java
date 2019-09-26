@@ -20,6 +20,7 @@ public class Employe {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dateNaissance;
     private int salaire;
+
     @JoinColumn(name = "service_id",referencedColumnName = "id")
     @ManyToOne(optional = false)
     private Service service = new Service();
